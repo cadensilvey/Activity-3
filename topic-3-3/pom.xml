@@ -14,7 +14,7 @@
 	<name>topic3-3</name>
 	<description>MVC example project in Spring</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
