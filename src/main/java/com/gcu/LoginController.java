@@ -13,9 +13,15 @@ import com.gcu.model.LoginModel;
 import business.SecurityServiceInterface;
 import jakarta.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 @Controller
 @RequestMapping("/login")
 public class LoginController {
+
+    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @Autowired
     SecurityServiceInterface securityService;
@@ -41,10 +47,13 @@ public class LoginController {
         // check for valid login name and pass
         if(securityService.isAuthenticated(loginModel)){
             model.addAttribute("model", loginModel);
+            logger.info("Logged In");
             return "loginSuccess";
         }
         else{
             // return to login screen if invalid pw
+            logger.info("Could not log in");
+
             return "login";
         }
     }
