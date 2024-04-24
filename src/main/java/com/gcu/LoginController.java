@@ -52,6 +52,7 @@ public class LoginController {
         }
         else{
             // return to login screen if invalid pw
+            // This is a test comment to show that I am able to comment using Visual Studio Online Editor
             logger.info("Could not log in");
 
             return "login";
